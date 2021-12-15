@@ -4,7 +4,11 @@ import ExpenseForm from './ExpenseForm';
 const NewExpense = (props) => {
 
     const newExpenseHandler = (newExpense) => {
-        props.onNewExpense(newExpense);
+        const expenseData = {
+            ...newExpense,
+            id: Math.random().toString(),
+          };
+        props.onNewExpense(expenseData);
     }
 
     return <div className="new-expense">
